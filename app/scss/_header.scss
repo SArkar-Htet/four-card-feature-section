@@ -5,11 +5,11 @@
 
   @include breakpoint-up(medium) {
     .heading, .sub-heading {
-      font-size: 2.3125rem;
+      font-size: $font-lg;
     }
   }
   
   .heading {
-    font-weight: 200;
+    font-weight: $font-light;
   }
 }
