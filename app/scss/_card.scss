@@ -1,8 +1,18 @@
 .card-container {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas: "sup" "team" "karma" "calc";
   gap: 24px;
-  margin-top: 3.875rem;
+  max-width: 1024px;
+  margin: 3.875rem auto 0px;
+
+  @include breakpoint-up(medium) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+      "sup team calc"
+      "sup karma calc";
+  }
+
   .card {
     position: relative;
     display: flex;
@@ -24,24 +34,30 @@
     }
 
     &--sup {
+      grid-area: sup;
+      align-self: center;
       &::before {
         background-color: $cyan;
       }
     }
 
     &--team {
+      grid-area: team;
       &::before {
         background-color: $red;
       }
     }
 
     &--karma {
+      grid-area: karma;
       &::before {
         background-color: $orange;
       }
     }
 
     &--calc {
+      grid-area: calc;
+      align-self: center;
       &::before {
         background-color: $blue;
       }
