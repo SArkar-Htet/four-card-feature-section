@@ -1,0 +1,59 @@
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 3.875rem;
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 27px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 5px;
+    }
+
+    &--sup {
+      &::before {
+        background-color: $cyan;
+      }
+    }
+
+    &--team {
+      &::before {
+        background-color: $red;
+      }
+    }
+
+    &--karma {
+      &::before {
+        background-color: $orange;
+      }
+    }
+
+    &--calc {
+      &::before {
+        background-color: $blue;
+      }
+    }
+
+    &__text {
+      font-size: 13px;
+    }
+
+    &__image {
+      align-self: flex-end;
+      padding-top: 1rem;
+    }
+  }
+}
